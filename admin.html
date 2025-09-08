@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link type="text/css" rel="stylesheet" href="./css/styleAdmin.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<section class="state-start">
+    <h1>Cadastrar Servidores Publicos</h1>
+  <form class="formulario-card">
+
+      <div class="input-form">   
+        <label>Nome Completo</label>
+        <input class="aviso-name" id="input-name" type="text" maxlength="24" placeholder="ex. Jane Appleseed" required >
+        <span class="aviso-name" id="span-name" >ESTE CAMPO DEVE SER PREENCHIDO</span>
+      </div>
+
+      <div class="input-form">   
+        <label>Numero de Matricula</label>
+        <input class="aviso-namber" id="input-namber"  type="text" maxlength="4" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" placeholder="ex. 1234" required>
+        <span class="aviso-namber" id="span-numero" >ESTE CAMPO DEVE SER PREENCHIDO (4 CARACHTERES)</span>
+      </div>
+
+      <div class="input-form cpfInput">   
+        <label>Cpf</label>
+        <input class="aviso-cpf" id="input-cpf" type="text" placeholder="ex. 12334567801"  maxlength="11"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" required>
+        <span class="aviso-cpf" id="span-cpf">PREENCHA AQUI</span>
+      </div>
+
+      <div class="input-form">   
+        <button id="btn-form" type="submit" value="Confirm">Cadastrar</button>
+      </div>
+  </form>
+  
+
+</section> <!-- Completed state start -->
+
+
+
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. </p>
+    <p>Coded by <a href="#">Pedro Matos</a>.</p>
+  </div>
+  
+  <script src="./js/jquery.js"></script>
+  <script src="./js/adminScript.js"></script>
+
+</body>
+</html >

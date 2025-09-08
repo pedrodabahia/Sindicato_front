@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link type="text/css" rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<div id="mensagemStatus"></div>
+<section class="state-start">
+ 
+   <div class="card-verse">
+  </div>
+
+  <div class="card-front">
+    <label class="label-card-Front" id="nome-card" >Associado da Silva Junior</label>
+    <label class="label-card-Front" id="matricula-card">Mat: 12345</label>
+    <label class="label-card-Front" id="cpf-card">Cpf: 123.456.789-01</label>
+  </div>
+
+ 
+  <form class="formulario-card">
+
+      <div class="input-form">   
+        <label>Nome Completo</label>
+        <input class="aviso-name" id="input-name" type="text" maxlength="24" placeholder="ex. Jane Appleseed" required >
+        <span class="aviso-name" id="span-name" >ESTE CAMPO DEVE SER PREENCHIDO</span>
+      </div>
+
+      <div class="input-form">   
+        <label>Numero de Matricula</label>
+        <input class="aviso-namber" id="input-namber"  type="text" maxlength="4" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" placeholder="ex. 1234" required>
+        <span class="aviso-namber" id="span-numero" >ESTE CAMPO DEVE SER PREENCHIDO (4 CARACHTERES)</span>
+      </div>
+
+      <div class="input-form cpfInput">   
+        <label>Cpf</label>
+        <input class="aviso-cpf" id="input-cpf" type="text" placeholder="ex. 12334567801"  maxlength="11"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" required>
+        <span class="aviso-cpf" id="span-cpf">PREENCHA AQUI</span>
+      </div>
+
+      <div class="input-form">   
+        <button id="btn-form" type="submit" value="Confirm">Confirm</button>
+      </div>
+  </form>
+  
+    <div class="complate-state">
+      <div id="circle-complet"></div>
+      <h1>Sucesso!</h1>
+      <h2>Parabéns, sua carteirinha de associado foi gerada com sucesso!<br> Clique no botão abaixo para fazer o download</h2> 
+      <button id="btnOpen"type="button" onclick="generatorCard()">Download</button>
+    </div> 
+
+</section> <!-- Completed state start -->
+
+
+
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. </p>
+    <p>Coded by <a href="#">Pedro Matos</a>.</p>
+  </div>
+  
+  <script src="./js/jquery.js"></script>
+  <script src="./js/verifica.js"></script>
+  <script src="./js/functions.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="./js/cardGenerator.js"></script>
+
+</body>
+</html >
