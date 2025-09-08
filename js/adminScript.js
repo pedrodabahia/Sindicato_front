@@ -10,7 +10,7 @@ document.getElementById('btn-form').addEventListener('click', async (e) => {
 });
 
 async function cadastrar(nome, matriz, cpf) {
-  const apiUrl = "http://localhost:8080/usuarios";
+  const apiUrl = "https://sindicato-back.onrender.com/usuarios";
   const username = 'pedro';
   const password = "1234"; // precisa ser string
 
