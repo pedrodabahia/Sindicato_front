@@ -27,13 +27,6 @@ html,body{
     transition:0.5s;
     opacity:0;
 }
-button{
-    width: 10vw;
-    height: 10vw;
-    color: grey;
-    color: green;
-
-}
 
 form.formulario-card{
     /*background-color: grey;*/

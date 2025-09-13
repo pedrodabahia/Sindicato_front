@@ -7,15 +7,19 @@ document.getElementById('btn-form').addEventListener('click', async (e) => {
     const msg = document.getElementById('mensagemStatus');
 
     const resultado = await cadastrar(nome, matriz, cpf);
+
     if (resultado){
         msg.innerText = "servidor verificado com sucesso!";
-        msg.style.display = "block";
+        msg.style.opacity = 1;
         setTimeout(() => {console.log("rodando delay");},"3000");
-        msg.style.display = "none";
+        msg.style.opacity = 0;
     }else{
 
-        msg.style.backgroundColor = "red";
+        msg.style.backgroundColor = "red"; 
         msg.innerText = "numero de matricula não encontrado!";
+        msg.style.opacity = 1;
+        setTimeout(() => {console.log("rodando delay");},"3000");
+        msg.style.opacity = 0;
     }
     console.log("Resultado da requisição:", resultado);
 });
