@@ -15,6 +15,25 @@ html,body{
 }
 
 /*INICIO DA ESTILIZAÇÃO DO FORM*/
+#mensagemStatus{
+    width: 15vw;
+    height: 5vw;
+    padding:1vw 1vw 0vw 1vw;
+    border-radius: 0vw 0vw 0.5vw 0.5vw;
+    background-color: rgba(000,200,000,0.8);
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    transition:0.5s;
+    opacity:0;
+}
+button{
+    width: 10vw;
+    height: 10vw;
+    color: grey;
+    color: green;
+
+}
 
 form.formulario-card{
     /*background-color: grey;*/

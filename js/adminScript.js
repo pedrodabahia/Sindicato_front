@@ -4,8 +4,19 @@ document.getElementById('btn-form').addEventListener('click', async (e) => {
     const nome = document.getElementById('input-name').value;
     const matriz = document.getElementById('input-namber').value;
     const cpf = document.getElementById('input-cpf').value;
+    const msg = document.getElementById('mensagemStatus');
 
     const resultado = await cadastrar(nome, matriz, cpf);
+    if (resultado){
+        msg.innerText = "servidor verificado com sucesso!";
+        msg.style.display = "block";
+        setTimeout(() => {console.log("rodando delay");},"3000");
+        msg.style.display = "none";
+    }else{
+
+        msg.style.backgroundColor = "red";
+        msg.innerText = "numero de matricula não encontrado!";
+    }
     console.log("Resultado da requisição:", resultado);
 });
 
@@ -36,7 +47,7 @@ async function cadastrar(nome, matriz, cpf) {
 
     // se o corpo for vazio -> retorna null
     if (!text) {
-      return "Deu certo";
+      return true;
     }
 
     // tenta converter pra JSON
