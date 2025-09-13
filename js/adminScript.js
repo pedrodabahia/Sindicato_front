@@ -8,7 +8,9 @@ document.getElementById('btn-form').addEventListener('click', async (e) => {
 
     const resultado = await cadastrar(nome, matriz, cpf);
 
-    if (resultado){
+    console.log(resultado)
+
+    if (resultado == true){
         msg.innerText = "servidor verificado com sucesso!";
         msg.style.opacity = 1;
         setTimeout(() => {console.log("rodando delay");},"3000");
@@ -51,6 +53,7 @@ async function cadastrar(nome, matriz, cpf) {
 
     // se o corpo for vazio -> retorna null
     if (!text) {
+      console.log(text)
       return true;
     }
 
