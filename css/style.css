@@ -3,357 +3,211 @@
     src: url('../font/SpaceGrotesk-VariableFont_wght.ttf');
     font-weight: 500;
 }
-*{
-    padding: 0;
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'font-Base';
 }
 
-html,body{
-    height:100%;
-    background-image: URL('../images/bg-main-desktop.png');
-    background-repeat: no-repeat;#mensagemStatus{
-    width: 15vw;
-    height: 5vw;
-    padding:1vw 1vw 0vw 1vw;
-    border-radius: 0vw 0vw 0.5vw 0.5vw;
-    background-color: rgba(000,200,000,0.8);
-    text-transform: uppercase;
-    text-align: center;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #f5f5f5; /* fallback */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2vw;
+}
+
+/* MENSAGEM DE STATUS */
+#mensagemStatus {
+    width: 90%;
+    max-width: 400px;
+    padding: 1em;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(0, 200, 0, 0.8);
     color: white;
-    transition:0.5s;
-    opacity:0;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.5s;
+    margin: 1em auto;
 }
 
-    background-size: 35% 100%;
-    overflow: hidden;
+/* CONTAINER PRINCIPAL */
+section.state-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
-/*INICIO DA ESTILIZAÇÃO DO FORM*/
+/* CARTÕES */
+.card-front, .card-verse {
+    width: 300px;
+    max-width: 90%;
+    aspect-ratio: 1.75/1;
+    border-radius: 17px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    background-size: cover;
+    background-position: center;
+    margin: 1em 0;
+}
 
-form.formulario-card{
-    /*background-color: grey;*/
-    height: auto;
-    width:25%;
-    float: right;
-    margin-right: 15%;
-    margin-top: 10%;
-    display: block;
+/* FRONT */
+.card-front {
+    background-image: url('../images/bg-card-front.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1em;
+    color: black;
 }
-form.formulario-card .input-form{
-    width: 90%;
-    margin: 7%;
+
+#nome-card {
+    font-weight: 700;
+    font-size: 1.2em;
 }
-form.formulario-card .input-form input,form.formulario-card .input-form label,form.formulario-card .input-form button{
-    display: block;
-    width: 90%;
-    padding: 4%;
+
+#matricula-card, #cpf-card {
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+/* BACK */
+.card-verse {
+    background-image: url('../images/bg-card-back.png');
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    color: white;
+}
+
+/* FORMULÁRIO */
+form.formulario-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form.formulario-card .input-form input,
+form.formulario-card .input-form button,
+form.formulario-card .input-form label {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
     border-radius: 10px;
-    font-size: 1vw;
     border: 1px solid hsl(279, 6%, 55%);
 }
-form.formulario-card .input-form #input-date-mes, form.formulario-card .input-form #input-date-ano{
-    width: 37%;
-    padding: 5% 4%;
-    display: inline-block;
-}
 
-form.formulario-card .input-form input:focus{
-    outline: none;
-    border: 3px solid hsl(278, 70%, 30%);
-    background-color: hsl(276, 100%, 98%);
-
-}
-
-form.formulario-card .cvcInput,form.formulario-card .dataInput{
-    display: inline-block;
-    width: 35%;
-    margin: 5%;
-    margin-left: 7%;
-}
-form.formulario-card .input-form #input-cvc{
-    width: 100%;
-    padding: 5% 4%;
-    margin-left: 0%;
-}
-form.formulario-card .input-form button{ 
-    width: 98%;
-    color: hsl(270, 3%, 87%);
-    background-color:hsl(0, 78%, 39%);
-}
-form.formulario-card .input-form label{
-    font-size: 0.95vw;
-    width: 110%;
-    padding: 2% 1%;
-    border: none;
-    user-select: none;
-}
-
-/*FIM DA ESTILIZAÇÃO DO FORM*/
-
-/*INICIO DA ESTILIZAÇÃO DO CARTÃO FORNTAL*/
-
-
-
-section.state-start .card-front{
-    width: 25vw;
-    height: 14vw;
-    position: absolute;
-    top: 9vw;
-    left: 20%;
-    background-image: url('../images/bg-card-front.png');
-    background-repeat: no-repeat;
-    background-size: 100% 101%;
-    user-select: none;
-    color: Black;
-    border-radius: 17px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0,0.5);
-}
-
-section.state-start .card-front #nome-card{
-    width: 92%;
-    margin-left: 15.5%;
-    margin-top: 43%;
-    margin-bottom: -0.7%;
-    display: block;
-    font-size: 1.4vw;
-    font-weight: 700;
-
-}
-
-section.state-start .card-front #matricula-card{
-    display: inline-block;
-    width: 27%;
-    margin-left: 18%;
-    margin-top: 0;
-    font-size: 0.9vw;
-    font-weight: 700;
-    
-}
-section.state-start .card-front #cpf-card{
-    display: inline-block; 
-    width: 40%;
-    margin-left: 0%;
-    margin-top: 0%;
-    font-size: 0.9vw;
-    font-weight: 700;
-}
-
-/*FIM DA ESTILIZAÇÃO DO CARTÃO FORNTAL*/
-
-/*INICIO DA ESTILIZAÇÃO DO CARTÃO VERSO*/
-
-section.state-start .card-verse{
-    width: 25vw;
-    height: 14vw;
-    position: absolute;
-    top: 23.5vw;
-    left: 25%;
-    background-image: url('../images/bg-card-back.png');
-    background-repeat: no-repeat;
-    background-size: 101% 100%;
-    user-select: none;
-    color:white;
-    box-shadow: 0 2px 5px rgb(0, 0, 0);
-    border-radius: 17px;
-}
-
-section.state-start .label-card-verse{
-    width: 12%;
-    float: right;
-    margin-right: 10%;
-    margin-top: 24%;
-    display: block;
-    font-size: 1.4vw;
-}
-
-/*FIM DA ESTILIZAÇÃO DO CARTÃO VERSO*/
-
-/*INICIO DA ESTILIZAÇÃO DA MENSAGEM DE CONFIRMAÇÃO*/
-
-.complate-state{
-    /*background-color: grey;*/
-    height: auto;
-    width:25%;
-    float: right;
-    margin-right: 15%;
-    margin-top: 15%;
-    display: none;
-    text-align: center;
-    user-select: none;
-}
-.complate-state #circle-complet{
-    width: 6vw;
-    height:  6vw;
-    border-radius: 100%;
-    margin: 4%;
-    background-image: url('../images/icon-complete.svg');
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-.complate-state h1{
-    font-size: 2vw;
-    margin-bottom: 0.5vw;
-}
-.complate-state h2{
-    font-size: 1vw;
-    margin-bottom: 3vw;
-}
-.complate-state button{
-    width: 16vw;
-    height: 2.5vw;
-    background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);background-color:hsl(278, 68%, 11%);
-    border-radius: 10px;
+form.formulario-card .input-form button {
+    background-color: hsl(0, 78%, 39%);
     color: white;
-    font-size: 1vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+form.formulario-card .input-form button:hover {
+    background-color: hsl(0, 78%, 30%);
+}
 
-
-
-span{
+/* COMPLETADO */
+.complate-state {
     display: none;
-    font-size: 0.8vw;
-    color: red;
-    margin-left: 0.2vw;
-    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 2em 0;
 }
 
-.attribution{
-    margin: 0 35%;
-    float: inline-end;
-    margin-top: 7vw;
-    width: 30vw;
-    height: 10%;
+.complate-state #circle-complet {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('../images/icon-complete.svg');
+    background-size: cover;
+    margin-bottom: 1em;
 }
 
-/*FIM DA ESTILIZAÇÃO DA MENSAGEM DE CONFIRMAÇÃO*/
+.complate-state h1 {
+    font-size: 1.5em;
+}
 
-/*INICIO DA ESTILIZAÇÃO MOBILE*/
-@media screen and (max-width:600px){
-    html,body{
-        background-size: 100% 35%;
-        background-position: top;
-    }
-    html{
-        background-image: none;
-    }
-    form.formulario-card{
-        float: none;
-        display: block;
-    }
-    section.state-start .card-front,section.state-start .card-verse{
-        background-color: transparent;
-        background-size: 110% 110%;
-        position:static;
-        margin-top:-12%;
-        margin-left: 5vw;
-        width: 65vw;
-        height: 35vw;
-        border-radius: 5px;
+.complate-state h2 {
+    font-size: 1em;
+    margin: 0.5em 0 1em 0;
+}
 
-    }
+.complate-state button {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
+    border-radius: 10px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    cursor: pointer;
+}
 
-    section.state-start .card-verse{
-        margin-top: 10%;
-        margin-left: 25vw;
-        background-size: 100% 100%;
+/* RESPONSIVO MOBILE */
+@media screen and (max-width: 600px) {
+    #mensagemStatus {
+        font-size: 1.5em;
+        padding: 1em;
     }
 
- 
-    
-    form.formulario-card{
-        width:90%;
-        float: none;
-        margin:3%;
-        margin-top: 10%;
-    }
-    form.formulario-card .input-form input,form.formulario-card .input-form label,form.formulario-card .input-form button{
-        padding: 5%;
-        font-size: 3vw;
-    }
-    form.formulario-card .input-form #input-date-mes, form.formulario-card .input-form #input-date-ano{
-        padding: 5% 5%;
-        margin: 0;
-        display: inline-block;
-    }
-    
-    form.formulario-card .cvcInput,form.formulario-card .dataInput{
-        display: inline-block;
-        width: 40%;
-        margin: 0%;
-        margin-left: 7%;
-    }
-    form.formulario-card .input-form #input-cvc{
-        width: 100%;
-        padding: 5% 4%;
-        margin-left: 0%;
-    }
-    form.formulario-card .input-form label{
-        font-size: 3vw;
-        width: 110%;
-        padding: 2% 1%;
-        border: none;
-        user-select: none;
-    } 
-    section.state-start .card-front #nome-card{
-        font-size: 3vw;
-        padding-top: 40%;
-        margin-bottom: -5%;
-        
-    }
-    
-    section.state-start .card-front #matricula-card{
-        font-size: 2.5vw;
-        
-    }
-    section.state-start .card-front #cpf-card{
-       
-        font-size: 2.5vw;
-        
-    }
-    span{
-        display: none;
-        font-size: 2vw;
-       
-    }
-    section.state-start .label-card-verse{
-       
-        font-size: 3vw;
-    }
-
-    .complate-state{
-        /*background-color: grey;*/
-        height: auto;
-        width:90%;
-        margin-right: 5%;
-        margin-top: 5%;
-
-    }
-    .complate-state #circle-complet{
-        width: 18vw;
-        height:  18vw;
-    }
-    .complate-state h1{
-        font-size: 6vw;
-        margin-bottom: 4vw;
-    }
-    .complate-state h2{
-        color: grey;
-        font-size: 4vw;
-        margin-bottom: 8vw;
-    }
-    .complate-state button{
-        width: 80vw;
-        height: 12vw;
+    .card-front, .card-verse {
+        width: 90%;
+        aspect-ratio: 1.75/1;
         border-radius: 10px;
-        font-size: 3vw;
-        margin-bottom: 18vw;
+        margin: 1em 0;
     }
-    .attribution{
-        margin: 0 35%;
-        width: 30vw;
-        height: 10%;
+
+    #nome-card {
+        font-size: 1.5em;
+    }
+    #matricula-card, #cpf-card {
+        font-size: 1.2em;
+    }
+
+    form.formulario-card {
+        width: 90%;
+        gap: 1.2em;
+    }
+
+    form.formulario-card .input-form input,
+    form.formulario-card .input-form button,
+    form.formulario-card .input-form label {
+        font-size: 1.2em;
+        padding: 1em;
+    }
+
+    .complate-state #circle-complet {
+        width: 120px;
+        height: 120px;
+    }
+
+    .complate-state h1 {
+        font-size: 2em;
+    }
+
+    .complate-state h2 {
+        font-size: 1.5em;
+    }
+
+    .complate-state button {
+        font-size: 1.2em;
+        padding: 1em;
     }
 }
