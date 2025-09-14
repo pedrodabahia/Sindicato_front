@@ -13,15 +13,19 @@ document.getElementById('btn-form').addEventListener('click', async (e) => {
     if (resultado == true){
         msg.innerText = "servidor verificado com sucesso!";
         msg.style.opacity = 1;
-        setTimeout(() => {console.log("rodando delay");},3000);
-        msg.style.opacity = 0;
+        setTimeout(() => {
+          console.log("rodando delay");
+          msg.style.opacity = 0;
+      },3000);
     }else{
 
         msg.style.backgroundColor = "red"; 
         msg.innerText = "numero de matricula não encontrado!";
         msg.style.opacity = 1;
-        setTimeout(() => {console.log("rodando delay");},3000);
-        msg.style.opacity = 0;
+        setTimeout(() => {
+          console.log("rodando delay");
+          msg.style.opacity = 0;  
+        },3000);
     }
     console.log("Resultado da requisição:", resultado);
 });
