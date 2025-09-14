@@ -25,7 +25,15 @@ html,body{
     text-align: center;
     color: white;
     transition:0.5s;
+    display: block;
+    margin:0 41vw;
     opacity:0;
+}
+h1{
+    text-align: center;
+    margin:0vw 25vw;
+    font-size: 3vw;
+    width:50vw;
 }
 
 form.formulario-card{
@@ -34,7 +42,7 @@ form.formulario-card{
     width:25%;
     float: right;
     margin: 0 37.5%;
-    margin-top: 10%;
+    margin-top: 5%;
     display: block;
 }
 form.formulario-card .input-form{
