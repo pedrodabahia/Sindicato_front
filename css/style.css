@@ -231,10 +231,11 @@ span{
 /*FIM DA ESTILIZAÇÃO DA MENSAGEM DE CONFIRMAÇÃO*/
 
 /*INICIO DA ESTILIZAÇÃO MOBILE*/
-@media screen and (max-width:600px){
+@media screen and (max-width:800px){
     html,body{
         background-size: 100% 35%;
         background-position: top;
+        overflow-y: auto
     }
     html{
         background-image: none;
@@ -247,7 +248,7 @@ span{
         background-color: transparent;
         background-size: 110% 110%;
         position:static;
-        margin-top:-12%;
+        margin-top:-25%;
         margin-left: 5vw;
         width: 65vw;
         height: 35vw;
@@ -256,7 +257,7 @@ span{
     }
 
     section.state-start .card-verse{
-        margin-top: 10%;
+        margin-top: 3%;
         margin-left: 25vw;
         background-size: 100% 100%;
     }
@@ -300,7 +301,8 @@ span{
     section.state-start .card-front #nome-card{
         font-size: 3vw;
         padding-top: 40%;
-        margin-bottom: -5%;
+        margin-bottom: 0%;
+        margin-left: 18%
         
     }
     
