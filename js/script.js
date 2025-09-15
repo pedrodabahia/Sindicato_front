@@ -25,12 +25,16 @@ $(document).ready(function(){
     $("#btn-form").click(async function(e){
       e.preventDefault();
 
+        const loader = document.getElementById('carregando');
+        const msg = document.getElementById('mensagemStatus');
+        loader.style.display = 'block';
+
         var name = $('#input-name').val()
         var numero = $('#input-namber').val()
         var cpf = $('#input-cpf').val()
-
-      const result = await verificador(numero);
-      console.log(result);
+try{
+      const result = await verificador(numero,cpf-card);
+      console.log(result);  
 
 if(result){
 
@@ -50,8 +54,18 @@ if(name == '' || numero == '' || cpf == ''){
         }
         
       }else{
-        alert("deu ruim demais pedo")
+        
+        msg.style.backgroundColor = "red"; 
+        msg.innerText = "numero de matricula não encontrado!";
+        msg.style.opacity = 1;
+        setTimeout(() => { msg.style.opacity = 0; },3000);
+
     }
+}catch(err){
+  alert(err);
+}finally{
+  loader.style.display='none';
+}
       });
 
   /*  $('#btnOpen').click(() => {

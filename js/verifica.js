@@ -1,19 +1,15 @@
-		async function verificador(matricula) {
+		async function verificador(matriculaCliente,cpfCliente) {
 
   const msg = document.getElementById("mensagemStatus");
   const apiUrl = "https://sindicato-back.onrender.com/usuarios/listar";
   const username = 'pedro';
   const password = 1234;
-  const matrix = parseInt(matricula?.toString().trim(), 10);
+  const matrix = parseInt(matriculaCliente?.toString().trim(), 10);
+  const cpf = parseInt(cpfCliente?.toString().trim(), 10);
   const headers = new Headers();
-  const loader = document.getElementById('carregando');
-
 
 
   headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
-
-    loader.style.display = 'block';
-
 
   try {
     const response = await fetch(apiUrl, { method: 'GET', headers: headers });
@@ -29,9 +25,15 @@
     setTimeout(() => {console.log("rodando delay");},"3000");
     
     msg.style.display = "none";
-    return parseInt(dados.matriz) === matrix;
-    
-    });
+    const matriz = parseInt(dados.matriz);
+    const cpf = parseInt(dados.cpf);
+
+    if(matriz == matriculaCliente && cpf == cpfCliente){
+      return true
+    }else{
+      return false
+    }
+    }); 
 
     return verificarMatriz;
   } catch (error) {
@@ -39,7 +41,6 @@
     msg.style.backgroundColor = "red";
     msg.innerText = "numero de matricula não encontrado!";  
     console.log("erro ao buscar usuarios: " + error);
-  }finally{
-    loader.style.display = 'none'
   }
 }
+  
