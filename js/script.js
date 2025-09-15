@@ -33,7 +33,7 @@ $(document).ready(function(){
         var numero = $('#input-namber').val()
         var cpf = $('#input-cpf').val()
 try{
-      const result = await verificador(numero,cpf-card);
+      const result = await verificador(numero,cpf);
       console.log(result);  
 
 if(result){
