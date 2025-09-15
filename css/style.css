@@ -258,7 +258,7 @@ span{
 /*FIM DA ESTILIZAÇÃO DA MENSAGEM DE CONFIRMAÇÃO*/
 
 /*INICIO DA ESTILIZAÇÃO MOBILE*/
-@media screen and (max-width:800px){
+@media screen and (max-width:600px){
     html,body{
         background-size: 100% 35%;
         background-position: top;
@@ -328,9 +328,8 @@ span{
     section.state-start .card-front #nome-card{
         font-size: 2vw;
         padding-top: 30vw;
-        margin-bottom: 0%;
         margin-left: 18%;
-    margin-bottom: -1.7vw;     
+    margin-bottom: -2.5vw;     
     }
     
     section.state-start .card-front #matricula-card{
