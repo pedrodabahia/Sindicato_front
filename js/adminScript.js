@@ -34,12 +34,15 @@ async function cadastrar(nome, matriz, cpf) {
   const apiUrl = "https://sindicato-back-7z84.onrender.com/usuarios";
   const username = 'pedro';
   const password = "1234"; // precisa ser string
+  const loader = document.getElementById('carregando');
+
 
   const headers = new Headers();
   headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
   headers.set('Content-Type', 'application/json');
 
   const corpo = { nome, matriz, cpf };
+  loader.style.display = 'block';
 
   try {
     const response = await fetch(apiUrl, { 
@@ -71,5 +74,7 @@ async function cadastrar(nome, matriz, cpf) {
 
   } catch (error) {
     console.error("Erro ao buscar usuarios:", error);
+  }finally{
+      loader.style.display = 'none';
   }
 }

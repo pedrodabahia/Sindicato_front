@@ -6,9 +6,14 @@
   const password = 1234;
   const matrix = parseInt(matricula?.toString().trim(), 10);
   const headers = new Headers();
+  const loader = document.getElementById('carregando');
+
 
 
   headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+    loader.style.display = 'block';
+
 
   try {
     const response = await fetch(apiUrl, { method: 'GET', headers: headers });
@@ -34,5 +39,7 @@
     msg.style.backgroundColor = "red";
     msg.innerText = "numero de matricula não encontrado!";  
     console.log("erro ao buscar usuarios: " + error);
+  }finally{
+    loader.style.display = 'none'
   }
 }
