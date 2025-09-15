@@ -47,7 +47,8 @@ console.log(name)
     doc.addImage(cartao_verso, 'PNG', 0, 0, 85, 54);
 
 
-     doc.save("cartao_teste.pdf");
+     doc.save(name+".pdf");
+     window.location.href('/index.html')
 
 }
 

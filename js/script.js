@@ -62,7 +62,7 @@ if(name == '' || numero == '' || cpf == ''){
 
     }
 }catch(err){
-  alert(err);
+  console.log(err);
 }finally{
   loader.style.display='none';
 }
