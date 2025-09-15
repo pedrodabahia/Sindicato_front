@@ -299,7 +299,7 @@ span{
     }
     form.formulario-card .input-form input,form.formulario-card .input-form label,form.formulario-card .input-form button{
         padding: 5%;
-        font-size: 3vw;
+        font-size: 2vw;
     }
     form.formulario-card .input-form #input-date-mes, form.formulario-card .input-form #input-date-ano{
         padding: 5% 5%;
@@ -326,21 +326,21 @@ span{
         user-select: none;
     } 
     section.state-start .card-front #nome-card{
-        font-size: 3vw;
-        padding-top: 40%;
+        font-size: 2vw;
+        padding-top: 30vw;
         margin-bottom: 0%;
-        margin-left: 18%
-        
+        margin-left: 18%;
+    margin-bottom: -1.7vw;     
     }
     
     section.state-start .card-front #matricula-card{
-        font-size: 2.5vw;
+        font-size: 1.5vw;
         
     }
     section.state-start .card-front #cpf-card{
        
-        font-size: 2.5vw;
-        
+        font-size: 1.5vw;
+        margin-left:-8vw;
     }
     span{
         display: none;
